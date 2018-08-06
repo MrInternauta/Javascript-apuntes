@@ -1,0 +1,27 @@
+body{
+  margin: 2em;
+  text-align: center;
+  font-family: courier,monospace;
+}
+button{
+  border: none;
+  border-radius: 50px;
+  padding: 1em;
+  margin: 2em 0;
+  outline: none;
+  background-color: #ccc;
+  pointer: cursor;
+}
+button:hover{
+  background-color: #bbb;
+}
+button.deshab{
+  pointer-events: none;
+  opacity: .5;
+}
+.oculto{
+  display: none;
+}
+#timer {
+  font-size: 3em;
+}

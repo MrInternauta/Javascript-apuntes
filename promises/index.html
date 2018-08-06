@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+    const despertar = new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            //esta bien
+            //resolve('Me estoy bañando')
+            //ESTA MAL
+            reject('Error estoy en enfermo')
+
+        }, 3000)
+    }) 
+    despertar.then((message)=>{
+        console.log(message)
+    }).catch((message)=>{
+        console.log(  message)
+    })  
+    </script>
+</body>
+</html>

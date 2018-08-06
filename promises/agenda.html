@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <h1 id="agenda">Estoy despertando</h1>
+
+    <script>
+        const $agenda = document.getElementById('agenda');
+        function despertar(){
+            return new Promise((resolve, reject)=>{
+                setTimeout(() => {
+                    //esta bien
+                    $agenda.textContent = 'Me estoy bañando';
+                    resolve('Me estoy bañando')
+                }, 3000)
+            })
+        }
+
+        function bano(message) {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        //esta bien
+                        $agenda.textContent = message;
+                        resolve('Estoy comiendo')
+                    }, 3000)
+                })
+            }
+
+        function comer(message) {
+                    return new Promise((resolve, reject) => {
+                        setTimeout(() => {
+                            //esta bien
+                            $agenda.textContent = message;
+                            resolve('Estudio')
+                        }, 3000)
+                    })
+                }
+        function estudiar(message) {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        //esta bien
+                          $agenda.textContent = message;
+                        resolve('Estoy viendo videos')
+                    }, 3000)
+                })
+            }
+        despertar()
+        .then(bano)
+        .then(comer)
+        .then(estudiar)
+        .then((message)=>{
+            $agenda.textContent = message;
+        })
+        .catch((message)=>{
+            $agenda.style.color = 'red';
+            $agenda.textContent = message;
+        })
+
+        
+    </script>
+</body>
+
+</html>

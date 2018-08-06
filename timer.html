@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <h1 id="timer">Ha pasado 0 segundos</h1>
+        <button id="cancel">Cancel</button>
+    <script>
+        /*setTimeout(function(){
+            document.write('Ha pasado 5 segundos')
+        }, 5000)
+        */
+       const timer = document.getElementById('timer')
+       const cancel = document.getElementById('cancel')
+       let x = 0
+       const time = setInterval(function(){
+           x++
+           timer.textContent = x == 1 ? (`Ha pasado ${x} segundo`) : (`Ha pasado ${x} segundos`)
+       },1000 )
+       cancel.addEventListener('click', ()=>{
+           clearInterval(time)
+           timer.textContent = 'Cancelado'
+        
+        } )
+       
+    </script>
+</body>
+</html>
